@@ -1,5 +1,8 @@
 const express = require("express");
-const itemRoutes = require('./routes/item.routes')
+const db = require('./database-mysql/models/relation');
+const { subsRouter } = require("./database-mysql/routes/subscribesRo");
+const {usersRouter} = require('./database-mysql/routes/usersRo')
+const {prodsRouter} = require('./database-mysql/routes/productsRo')
 
 // TODO: Update this
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
@@ -14,8 +17,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/../client/dist"));
 
-app.use("/api/items", itemRoutes);
+
+
+app.use('/sub' ,subsRouter )
+app.use('/user' , usersRouter)
+app.use('/prod' , prodsRouter)
+
 
 app.listen(PORT, function () {
   console.log("listening on port 3000!");
 });
+
