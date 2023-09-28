@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const [term , setTerm] = useState('')
   return (
     <div>
           <nav className="navbar navbar-dark bg-dark">
@@ -30,9 +31,9 @@ const Navbar = () => {
         
       </ul>
       <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>{setTerm(e.target.value)}}/>
         
-        <button className="btn btn-outline-success" type="submit">Search</button>
+        <button className="btn btn-outline-success" type="submit" onClick={()=>{props.Searsh(term)}}>Search</button>
       </form>
     </div>
   </div>

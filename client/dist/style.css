@@ -1,3 +1,9 @@
+body{
+  background-image: url(./Images//wallpapersden.com_minion-in-gym_1920x1220.jpg);
+ 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .card {
   position: relative;
   width: 300px;
@@ -228,3 +234,14 @@ button {
   text-transform: uppercase;
 }
 
+.subsDiv{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.image{
+  height: 250px;
+  width: 250px;
+}
